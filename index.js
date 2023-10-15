@@ -2,6 +2,7 @@ const { program } = require("commander");
 
 const contacts = require("./contacts");
 
+// funkcja wywołuje metody z pliku contacts.js i przekazuje argumenty
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
@@ -47,6 +48,8 @@ program
   .option("-n, --name <type>", "user name")
   .option("-e, --email <type>", "user email")
   .option("-p, --phone <type>", "user phone");
+
+// parsowanie danych wyjściowych
 
 program.parse(process.argv);
 
